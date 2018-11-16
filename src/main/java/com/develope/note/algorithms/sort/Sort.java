@@ -4,6 +4,7 @@ public class Sort {
 
     /**
      * 对元素进行比较
+     * v < w、v = w、v > w分别对应v.compareTo(w)中的负整数、零、正整数(通常是-1、0、1)
      * @param a
      * @param b
      * @return
@@ -26,7 +27,7 @@ public class Sort {
 
     public static void show(Comparable[] a){
         for (int i = 0; i < a.length; i++){
-            System.out.println(a[i] + " ");
+            System.out.print(a[i] + " ");
         }
         System.out.println();
     }

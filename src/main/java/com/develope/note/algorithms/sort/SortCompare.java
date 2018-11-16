@@ -4,6 +4,7 @@ package com.develope.note.algorithms.sort;
 import com.develope.note.util.StdRandom;
 import com.develope.note.util.Stopwatch;
 import com.sun.scenario.effect.Merge;
+import com.sun.xml.internal.bind.v2.model.annotation.Quick;
 
 public class SortCompare {
 
@@ -17,6 +18,8 @@ public class SortCompare {
             ShellSort.sort(a);
         }else if ("Merge".equals(alg)){
             MergeSort.sort(a);
+        }else if ("Quick".equals(alg)){
+            QuickSort.sort(a);
         }
         return stopWatch.elapsedTime();
     }
@@ -45,12 +48,14 @@ public class SortCompare {
         String selection = "Selection";
         String shell = "Shell";
         String merge = "Merge";
+        String quick = "Quick";
         int len = 1000;
         int times = 1000;
         double t1 = timeRandomInput(insertion, len, times);
         double t2 = timeRandomInput(selection, len, times);
         double t3 = timeRandomInput(shell, len, times);
         double t4 = timeRandomInput(merge, len, times);
+        double t5 = timeRandomInput(quick, len, times);
         System.out.printf("插入排序算法测试%d个数据%d次耗时%s秒", len, times, t1);
         System.out.println();
         System.out.printf("选择排序算法测试%d个数据%d次耗时%s秒", len, times, t2);
@@ -58,5 +63,7 @@ public class SortCompare {
         System.out.printf("希尔排序算法测试%d个数据%d次耗时%s秒", len, times, t3);
         System.out.println();
         System.out.printf("归并排序算法测试%d个数据%d次耗时%s秒", len, times, t4);
+        System.out.println();
+        System.out.printf("快速排序算法测试%d个数据%d次耗时%s秒", len, times, t5);
     }
 }
